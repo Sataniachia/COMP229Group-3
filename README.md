@@ -14,7 +14,7 @@ Rapid Tasks is a comprehensive task management system that allows users to:
 ## 👥 Team Members
 
 **COMP229 Group 3:**
-- [Add team member names and student IDs here]
+- [Marcel Borkowski 301488651]
 - [Add team member names and student IDs here]
 - [Add team member names and student IDs here]
 
@@ -173,5 +173,5 @@ For questions about this project, please contact any of the team members or refe
 ---
 
 **Course:** COMP229 - Web Application Development  
-**Institution:** [Your Institution Name]  
-**Semester:** [Current Semester]
+**Institution:** Centennial College
+**Semester:** Summer 2025
