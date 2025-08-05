@@ -1,177 +1,215 @@
 # Rapid Tasks - Task Management Application
 
-A full-stack task management application built by **COMP229 Group 3** as part of our Web Application Development course.
+**Team:** COMP229 Group 3  
+**Course:** COMP229 - Web Application Development  
+**Project:** Task Management System with MERN Stack
 
-## 🎯 Project Overview
+---
 
-Rapid Tasks is a comprehensive task management system that allows users to:
-- Create, read, update, and delete tasks
-- User authentication and authorization
-- Task status tracking (Pending, In Progress, Completed)
-- Due date management
-- User profile management
+## 🚀 Quick Start
 
-## 👥 Team Members
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB (local installation or MongoDB Atlas)
+- Git
 
-**COMP229 Group 3:**
-- [Add team member names and student IDs here]
-- [Add team member names and student IDs here]
-- [Add team member names and student IDs here]
+### Installation
 
-## 🚀 Tech Stack
+1. **Clone the repository**
+   ```bash
+   git clone [repository-url]
+   cd COMP229-Project
+   ```
 
-### Frontend (React)
-- **React 19** - UI framework
-- **React Router** - Navigation
-- **Axios** - HTTP client
-- **CSS-in-JS** - Styling
+2. **Backend Setup**
+   ```bash
+   cd mern_skeleton
+   npm install
+   ```
 
-### Backend (Node.js/Express)
-- **Node.js** - Runtime environment
+3. **Frontend Setup**
+   ```bash
+   cd client
+   npm install
+   ```
+
+4. **Database Setup**
+   - Ensure MongoDB is running locally on port 27017
+   - Or update `config/config.js` with your MongoDB Atlas connection string
+
+5. **Create Admin User**
+   ```bash
+   # From mern_skeleton directory
+   node createAdmin.js
+   ```
+
+### Running the Application
+
+1. **Start Backend Server**
+   ```bash
+   cd mern_skeleton
+   npm run dev
+   ```
+   Server runs on: http://localhost:4000
+
+2. **Start Frontend (in new terminal)**
+   ```bash
+   cd mern_skeleton/client
+   npm run dev
+   ```
+   Frontend runs on: http://localhost:5173
+
+### Admin Login Credentials
+- **Email:** admin@rapidtasks.com
+- **Password:** admin123
+
+### Test User Credentials
+- **Email:** test@rapidtasks.com
+- **Password:** test123
+
+---
+
+## � Project Features (Release 1)
+
+### ✅ Completed Features
+- [x] User registration and authentication
+- [x] JWT-based secure login system
+- [x] Task creation with title, description, priority, and due date
+- [x] View all user tasks
+- [x] Edit existing tasks
+- [x] Delete tasks
+- [x] Task status management (Pending, In Progress, Completed)
+- [x] Responsive React frontend
+- [x] RESTful API with Express.js
+- [x] MongoDB database with Mongoose ODM
+
+### 🚧 Upcoming Features (Release 2)
+- [ ] Home/Landing page
+- [ ] Enhanced navigation bar
+- [ ] User profile management
+- [ ] Task filtering and search
+- [ ] Task statistics dashboard
+
+---
+
+## 🛠 Technology Stack
+
+### Backend
+- **Node.js** - JavaScript runtime
 - **Express.js** - Web framework
-- **MongoDB** - Database
-- **Mongoose** - ODM
-- **JWT** - Authentication
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB object modeling
+- **JWT** - Authentication tokens
 - **bcryptjs** - Password hashing
+
+### Frontend
+- **React** - User interface library
+- **React Router** - Client-side routing
+- **Vite** - Build tool and dev server
+- **Axios** - HTTP client for API calls
+
+---
 
 ## 📁 Project Structure
 
 ```
 COMP229-Project/
-├── rapid-tasks-client/          # React frontend
-│   ├── src/
-│   │   ├── components/          # Reusable components
-│   │   ├── pages/              # Page components
-│   │   └── ...
+├── mern_skeleton/                 # Main application
+│   ├── client/                    # React frontend
+│   │   ├── src/
+│   │   │   ├── pages/            # Page components
+│   │   │   ├── components/       # Reusable components
+│   │   │   ├── services/         # API service layer
+│   │   │   └── App.jsx           # Main app component
+│   │   └── package.json
+│   ├── server/                    # Backend logic
+│   │   ├── controllers/          # Request handlers
+│   │   ├── models/              # Database models
+│   │   ├── routes/              # API routes
+│   │   └── middleware/          # Custom middleware
+│   ├── config/                   # Configuration files
+│   ├── server.js                 # Server entry point
 │   └── package.json
-└── rapid-tasks-server/          # Express backend
-    ├── controllers/             # Business logic
-    ├── models/                  # Database models
-    ├── routes/                  # API routes
-    ├── middleware/              # Custom middleware
-    └── package.json
+├── EXTERNAL_DESIGN_DOCUMENT.md   # Project design document
+├── PRODUCT_BACKLOG_SIMPLE.md     # Project backlog
+└── README.md                      # This file
 ```
 
-## 🛠️ Installation & Setup
+---
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas)
-- Git
-
-### Backend Setup
-1. Navigate to the server directory:
-   ```bash
-   cd rapid-tasks-server
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Create environment file:
-   ```bash
-   cp .env.example .env
-   ```
-
-4. Update `.env` with your MongoDB connection string
-
-5. Start the server:
-   ```bash
-   npm run dev
-   ```
-
-### Frontend Setup
-1. Navigate to the client directory:
-   ```bash
-   cd rapid-tasks-client
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-## 🔗 API Endpoints
+## � API Endpoints
 
 ### Authentication
-- `POST /api/register` - User registration
-- `POST /api/login` - User login
-- `GET /api/profile` - Get user profile
-- `PUT /api/profile` - Update profile
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
 
 ### Tasks
 - `GET /api/tasks` - Get all user tasks
 - `POST /api/tasks` - Create new task
+- `GET /api/tasks/:id` - Get specific task
 - `PUT /api/tasks/:id` - Update task
 - `DELETE /api/tasks/:id` - Delete task
-- `GET /api/tasks/stats` - Task statistics
 
-### Users (Admin)
-- `GET /api/users` - Get all users
-- `PUT /api/users/:id` - Update user
-- `DELETE /api/users/:id` - Delete user
+---
 
-## 📋 Features Completed
+## 👥 Team Members
 
-### Part B (First Release) ✅
-- [x] Express backend with MVC structure
-- [x] MongoDB database setup
-- [x] User authentication and authorization
-- [x] Complete CRUD operations for tasks
-- [x] API testing ready
-- [x] JWT-based security
+This project is designed for a 4-member team with the following roles:
 
-### Part 3 (Frontend-Backend Integration) 🚧
-- [x] React frontend with routing
-- [x] User registration and login
-- [x] Task management interface
-- [x] API integration
-- [ ] Home/Landing page
-- [ ] Complete CRUD UI for tasks
-- [ ] Enhanced navigation
+- **Team Member 1:** Backend Architecture & Database
+- **Team Member 2:** Task Management & API Development  
+- **Team Member 3:** Authentication & Security
+- **Team Member 4:** Frontend Development & UI/UX
 
-## 🎥 Demo
+---
 
-[Link to video presentation will be added here]
+## � Course Requirements Met
 
-## 📝 Documentation
+### Project Part 2 - Backend Development ✅
+- [x] Created appropriate Task object for task management site
+- [x] Set up MongoDB database with User and Task collections
+- [x] Built backend using Express.js with MVC structure
+- [x] Implemented user APIs and task CRUD operations
+- [x] Added authentication and authorization with JWT
+- [x] Full CRUD operations functional
+- [x] Basic functional frontend (not focused on design)
 
-- [Backend API Documentation](./rapid-tasks-server/README.md)
-- [Frontend Documentation](./rapid-tasks-client/README.md)
+### Project Part 3 - Frontend Integration (Next)
+- [ ] Home/Landing page with team logo
+- [ ] Navigation bar with user authentication status
+- [ ] SignUp/SignIn integration
+- [ ] Enhanced task management interface
 
-## 🚀 Deployment
+### Project Part 4 - Final Release (Future)
+- [ ] Visual design improvements
+- [ ] Unit and E2E testing
+- [ ] Cloud deployment
+- [ ] CI/CD pipeline
 
-Instructions for deployment will be added as the project progresses.
+---
 
-## 🤝 Contributing
+## � Troubleshooting
 
-This is a group project for COMP229. All team members should:
+### Common Issues
+1. **MongoDB Connection Error**
+   - Ensure MongoDB is running locally
+   - Check connection string in `config/config.js`
 
-1. Clone the repository
-2. Create feature branches for new work
-3. Make regular commits with clear messages
-4. Submit pull requests for review
-5. Follow the coding standards established
+2. **Port Already in Use**
+   - Backend: Change port in `config/config.js`
+   - Frontend: Vite will suggest alternative port
+
+3. **Admin User Not Created**
+   - Run `node createAdmin.js` from mern_skeleton directory
+   - Check MongoDB connection
+
+---
 
 ## 📄 License
 
 This project is for educational purposes as part of COMP229 coursework.
 
-## 📞 Contact
-
-For questions about this project, please contact any of the team members or refer to the course materials.
-
 ---
 
-**Course:** COMP229 - Web Application Development  
-**Institution:** [Your Institution Name]  
-**Semester:** [Current Semester]
+**Last Updated:** August 2025  
+**Project Status:** Release 1 Complete ✅

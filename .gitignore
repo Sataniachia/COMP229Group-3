@@ -1,3 +1,6 @@
+# VS Code history files
+.history/
+
 # Dependencies
 node_modules/
 npm-debug.log*
