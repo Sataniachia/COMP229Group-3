@@ -5,6 +5,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Tasks from './pages/Tasks';
 import AddTask from './pages/AddTask';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
 import './App.css';
 
 const App = () => {
@@ -12,10 +14,9 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if user is logged in on app load
     const token = localStorage.getItem('token');
     const userData = localStorage.getItem('user');
-    
+
     if (token && userData) {
       try {
         setUser(JSON.parse(userData));
@@ -56,6 +57,12 @@ const App = () => {
         <main className="main-content">
           <Routes>
             <Route 
+              path="/" 
+              element={
+                user ? <Navigate to="/tasks" replace /> : <Home />
+              } 
+            />
+            <Route 
               path="/login" 
               element={
                 user ? <Navigate to="/tasks" replace /> : <Login onLogin={login} />
@@ -80,9 +87,9 @@ const App = () => {
               } 
             />
             <Route 
-              path="/" 
+              path="/profile" 
               element={
-                user ? <Navigate to="/tasks" replace /> : <Navigate to="/login" replace />
+                user ? <Profile /> : <Navigate to="/login" replace />
               } 
             />
           </Routes>
