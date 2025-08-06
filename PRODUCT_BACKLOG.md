@@ -7,6 +7,17 @@
 
 ---
 
+## Team Members & Roles
+
+| Name | Role | Primary Responsibilities |
+|------|------|-------------------------|
+| Marcel Borkowski | Backend Lead / Full-Stack | API development, database design, authentication, server architecture |
+| Yiwei Li | Frontend Lead / UI/UX | React components, user interface design, navigation, styling |
+| [Team Member 3] | [Role] | [Responsibilities] |
+| [Team Member 4] | [Role] | [Responsibilities] |
+
+---
+
 ## Sprint Overview
 
 ### Sprint 1 - Project Part 2 (Weeks 7-9)
@@ -28,44 +39,44 @@
 | ID | Epic | Story | Priority | Story Points | Sprint | Status | Assignee |
 |----|------|-------|----------|--------------|--------|--------|----------|
 | **AUTHENTICATION & USER MANAGEMENT** |
-| PB-001 | Auth | User Registration API | High | 8 | 1 | ✅ Done | |
-| PB-002 | Auth | User Login API | High | 8 | 1 | ✅ Done | |
-| PB-003 | Auth | JWT Token Authentication | High | 5 | 1 | ✅ Done | |
-| PB-004 | Auth | Password Hashing & Security | High | 5 | 1 | ✅ Done | |
-| PB-005 | Auth | User Profile API | Medium | 5 | 2 | | |
+| PB-001 | Auth | User Registration API | High | 8 | 1 | ✅ Done | Marcel B |
+| PB-002 | Auth | User Login API | High | 8 | 1 | ✅ Done | Marcel B |
+| PB-003 | Auth | JWT Token Authentication | High | 5 | 1 | ✅ Done | Marcel B |
+| PB-004 | Auth | Password Hashing & Security | High | 5 | 1 | ✅ Done | Marcel B |
+| PB-005 | Auth | User Profile API | Medium | 5 | 2 | ✅ Done | Yiwei L |
 | **TASK MANAGEMENT** |
-| PB-006 | Tasks | Create Task API | High | 8 | 1 | ✅ Done | |
-| PB-007 | Tasks | Get Tasks API | High | 5 | 1 | ✅ Done | |
-| PB-008 | Tasks | Update Task API | High | 8 | 1 | ✅ Done | |
-| PB-009 | Tasks | Delete Task API | High | 5 | 1 | ✅ Done | |
-| PB-010 | Tasks | Task Filtering & Search | Medium | 8 | 2 | | |
-| PB-011 | Tasks | Task Statistics API | Low | 5 | 2 | | |
+| PB-006 | Tasks | Create Task API | High | 8 | 1 | ✅ Done | Marcel B |
+| PB-007 | Tasks | Get Tasks API | High | 5 | 1 | ✅ Done | Marcel B |
+| PB-008 | Tasks | Update Task API | High | 8 | 1 | ✅ Done | Marcel B |
+| PB-009 | Tasks | Delete Task API | High | 5 | 1 | ✅ Done | Marcel B |
+| PB-010 | Tasks | Task Filtering & Search | Medium | 8 | 2 | 🚧 In Progress | Marcel B |
+| PB-011 | Tasks | Task Statistics API | Low | 5 | 2 | 📅 Planned | |
 | **FRONTEND DEVELOPMENT** |
-| PB-012 | UI | Home/Landing Page | High | 13 | 2 | | |
-| PB-013 | UI | User Registration Form | High | 8 | 2 | | |
-| PB-014 | UI | User Login Form | High | 8 | 2 | | |
-| PB-015 | UI | Task List View | High | 13 | 2 | | |
-| PB-016 | UI | Add Task Form | High | 8 | 2 | | |
-| PB-017 | UI | Edit Task Form | High | 8 | 2 | | |
-| PB-018 | UI | Navigation Bar | Medium | 5 | 2 | | |
-| PB-019 | UI | User Profile Page | Medium | 8 | 2 | | |
+| PB-012 | UI | Home/Landing Page | High | 13 | 2 | ✅ Done | Yiwei L |
+| PB-013 | UI | User Registration Form | High | 8 | 2 | ✅ Done | Yiwei L |
+| PB-014 | UI | User Login Form | High | 8 | 2 | ✅ Done | Yiwei L |
+| PB-015 | UI | Task List View | High | 13 | 2 | ✅ Done | Yiwei L |
+| PB-016 | UI | Add Task Form | High | 8 | 2 | ✅ Done | Yiwei L |
+| PB-017 | UI | Edit Task Form | High | 8 | 2 | 🚧 In Progress | Marcel B |
+| PB-018 | UI | Navigation Bar | Medium | 5 | 2 | ✅ Done | Yiwei L |
+| PB-019 | UI | User Profile Page | Medium | 8 | 2 | ✅ Done | Yiwei L |
 | **INTEGRATION** |
-| PB-020 | Integration | Frontend-Backend API Integration | High | 13 | 2 | | |
-| PB-021 | Integration | Authentication Flow | High | 8 | 2 | | |
-| PB-022 | Integration | Task CRUD Frontend | High | 13 | 2 | | |
-| PB-023 | Integration | Error Handling & Validation | Medium | 8 | 2 | | |
+| PB-020 | Integration | Frontend-Backend API Integration | High | 13 | 2 | ✅ Done | Marcel B |
+| PB-021 | Integration | Authentication Flow | High | 8 | 2 | ✅ Done | Marcel B |
+| PB-022 | Integration | Task CRUD Frontend | High | 13 | 2 | 🚧 In Progress | Marcel B |
+| PB-023 | Integration | Error Handling & Validation | Medium | 8 | 2 | ✅ Done | Marcel B |
 | **DATABASE & BACKEND** |
-| PB-024 | Backend | MongoDB Atlas Setup | High | 8 | 1 | ✅ Done | |
-| PB-025 | Backend | User Model & Schema | High | 5 | 1 | ✅ Done | |
-| PB-026 | Backend | Task Model & Schema | High | 5 | 1 | ✅ Done | |
-| PB-027 | Backend | Express Server Setup | High | 8 | 1 | ✅ Done | |
-| PB-028 | Backend | MVC Structure Implementation | High | 8 | 1 | ✅ Done | |
-| PB-029 | Backend | API Route Configuration | High | 5 | 1 | ✅ Done | |
+| PB-024 | Backend | MongoDB Atlas Setup | High | 8 | 1 | ✅ Done | Marcel B |
+| PB-025 | Backend | User Model & Schema | High | 5 | 1 | ✅ Done | Marcel B |
+| PB-026 | Backend | Task Model & Schema | High | 5 | 1 | ✅ Done | Marcel B |
+| PB-027 | Backend | Express Server Setup | High | 8 | 1 | ✅ Done | Marcel B |
+| PB-028 | Backend | MVC Structure Implementation | High | 8 | 1 | ✅ Done | Marcel B |
+| PB-029 | Backend | API Route Configuration | High | 5 | 1 | ✅ Done | Marcel B |
 | **TESTING & QUALITY** |
-| PB-030 | Testing | API Testing Documentation | High | 5 | 1 | ✅ Done | |
-| PB-031 | Testing | Unit Testing Setup | Medium | 8 | 3 | | |
-| PB-032 | Testing | E2E Testing with Cypress | Medium | 13 | 3 | | |
-| PB-033 | Testing | Performance Testing | Low | 8 | 3 | | |
+| PB-030 | Testing | API Testing Documentation | High | 5 | 1 | ✅ Done | Marcel B |
+| PB-031 | Testing | Unit Testing Setup | Medium | 8 | 3 | 📅 Planned | |
+| PB-032 | Testing | E2E Testing with Cypress | Medium | 13 | 3 | 📅 Planned | |
+| PB-033 | Testing | Performance Testing | Low | 8 | 3 | 📅 Planned | |
 | **DEPLOYMENT & DEVOPS** |
 | PB-034 | DevOps | Cloud Deployment Setup | High | 13 | 3 | | |
 | PB-035 | DevOps | CI/CD Pipeline | Medium | 13 | 3 | | |

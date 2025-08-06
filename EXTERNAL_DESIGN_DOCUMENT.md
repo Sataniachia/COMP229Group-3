@@ -67,6 +67,27 @@ Our application's main data object is the **Task**, which includes:
 
 **Development Note:** We initially built the application using separate rapid-tasks-client and rapid-tasks-server directories. During development, we migrated all code to the mern_skeleton structure to comply with COMP229 assignment requirements and improve project organization.
 
+### Development Team Contributions
+
+**Marcel Borkowski:**
+- Complete backend architecture and API development
+- MongoDB Atlas integration and database design
+- Authentication system with JWT tokens and bcryptjs
+- All CRUD operations for tasks and users
+- Express.js MVC structure implementation
+- Bug fixes and debugging throughout development
+- Project migration and restructuring to mern_skeleton
+- Server configuration and deployment setup
+
+**Yiwei Li:**
+- Initial React frontend components (AddTask.jsx, Login.jsx, Tasks.jsx)
+- Original Navbar component design and implementation
+- Home page with team logo integration
+- Profile page for user management
+- Frontend styling and layout
+- Team logo creation and asset management
+- Early project structure and organization
+
 ---
 
 ## 4. Wireframes
@@ -162,26 +183,29 @@ Our application's main data object is the **Task**, which includes:
 **Project Part 2 (Current Release) - COMPLETED ✅**
 
 #### Backend Implementation:
-- MongoDB database with User and Task collections
-- Express.js server with MVC architecture
-- RESTful API endpoints for authentication and tasks
-- JWT-based authentication system
-- Password hashing and security
+- MongoDB database with User and Task collections (Marcel Borkowski)
+- Express.js server with MVC architecture (Marcel Borkowski)
+- RESTful API endpoints for authentication and tasks (Marcel Borkowski)
+- JWT-based authentication system (Marcel Borkowski)
+- Password hashing and security (Marcel Borkowski)
 
 #### Frontend Implementation:
-- React application with component-based architecture
-- User registration and login pages
-- Task list view and management
-- Add/Edit task forms
+- React application with component-based architecture (Yiwei Li - initial structure, Marcel Borkowski - integration & fixes)
+- User registration and login pages (Yiwei Li - original components, Marcel Borkowski - API integration)
+- Task list view and management (Yiwei Li - UI components, Marcel Borkowski - backend integration)
+- Add/Edit task forms (Yiwei Li - initial forms, Marcel Borkowski - functionality)
+- Home page with team logo (Yiwei Li)
+- Profile management page (Yiwei Li)
+- Navigation bar with logo integration (Yiwei Li)
 - Basic styling (functional, not focused on design)
 
 #### API Endpoints Created:
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `GET /api/tasks` - Get user tasks
-- `POST /api/tasks` - Create new task
-- `PUT /api/tasks/:id` - Update task
-- `DELETE /api/tasks/:id` - Delete task
+- `POST /api/auth/register` - User registration (Marcel Borkowski)
+- `POST /api/auth/login` - User login (Marcel Borkowski)
+- `GET /api/tasks` - Get user tasks (Marcel Borkowski)
+- `POST /api/tasks` - Create new task (Marcel Borkowski)
+- `PUT /api/tasks/:id` - Update task (Marcel Borkowski)
+- `DELETE /api/tasks/:id` - Delete task (Marcel Borkowski)
 
 ---
 
@@ -230,16 +254,16 @@ Our application's main data object is the **Task**, which includes:
 - **Development:** Vite, Nodemon, ESLint
 
 ### MVC Architecture
-- **Models:** User.model.js, Task.model.js
-- **Views:** React components
-- **Controllers:** auth.controller.js, task.controller.js
-- **Routes:** auth.routes.js, task.routes.js
+- **Models:** User.model.js, Task.model.js (Marcel Borkowski)
+- **Views:** React components (Yiwei Li - initial structure, Marcel Borkowski - integration)
+- **Controllers:** auth.controller.js, task.controller.js (Marcel Borkowski)
+- **Routes:** auth.routes.js, task.routes.js (Marcel Borkowski)
 
 ### CRUD Operations Implemented
-- **Create:** New tasks and user accounts
-- **Read:** View all user tasks and user profile
-- **Update:** Edit task details and status
-- **Delete:** Remove tasks from system
+- **Create:** New tasks and user accounts (Marcel Borkowski - backend, Yiwei Li - frontend forms)
+- **Read:** View all user tasks and user profile (Marcel Borkowski - API, Yiwei Li - UI components)
+- **Update:** Edit task details and status (Marcel Borkowski)
+- **Delete:** Remove tasks from system (Marcel Borkowski)
 
 ---
 
@@ -252,11 +276,14 @@ Our application's main data object is the **Task**, which includes:
 - Task CRUD operations complete
 - Database properly structured
 
-**Next Release (Project Part 3): PLANNED**
-- Home/Landing page with team logo
-- Enhanced navigation bar
-- Profile management
-- Improved UI/UX design
+**Next Release (Project Part 3): IN PROGRESS ✅**
+- Home/Landing page with team logo (Yiwei Li - ✅ COMPLETED)
+- Enhanced navigation bar (Yiwei Li - ✅ COMPLETED)
+- Profile management (Yiwei Li - ✅ COMPLETED)
+- Edit and delete task functionality (Marcel Borkowski - PLANNED)
+- Task filtering and search (PLANNED)
+- Dashboard with statistics (PLANNED)
+- Improved UI/UX design (PLANNED)
 
 **Final Release (Project Part 4): FUTURE**
 - Visual design improvements
@@ -272,13 +299,13 @@ Our application's main data object is the **Task**, which includes:
 
 **Team Name:** COMP229 Group 3
 
-### Team Members
-| Name | Student ID | Role | GitHub Username |
-|------|------------|------|-----------------|
-| Marcel Borkowski | 301488651 | Full-Stack Developer | Sataniachia |
-| [Team Member 2] | [ID] | [Role] | [Username] |
-| [Team Member 3] | [ID] | [Role] | [Username] |
-| [Team Member 4] | [ID] | [Role] | [Username] |
+### Team Members & Contributions
+| Name | Student ID | Role | GitHub Username | Primary Contributions |
+|------|------------|------|-----------------|----------------------|
+| Marcel Borkowski | 301488651 | Full-Stack Developer | Sataniachia | Backend architecture, MongoDB integration, authentication system, API development, task CRUD operations, debugging, project migration to MERN structure |
+| Yiwei Li | [ID] | Frontend Developer | [Username] | Initial React components, Home page, Profile page, Navbar component, team logo integration, frontend styling, early project structure |
+| [Team Member 3] | [ID] | [Role] | [Username] | [Contributions] |
+| [Team Member 4] | [ID] | [Role] | [Username] | [Contributions] |
 
 **Team Logo:** [Insert Team Logo Here]
 
@@ -515,30 +542,40 @@ Our application's main data object is the **Task**, which includes:
 ## 9. Development Progress
 
 ### Completed Features ✅
-- [x] Express backend server with MVC architecture
-- [x] MongoDB database connection and models
-- [x] User authentication system (register/login)
-- [x] JWT token-based authorization
-- [x] Password hashing and security
-- [x] Complete CRUD API endpoints for tasks
-- [x] React frontend application
-- [x] User registration and login UI
-- [x] Task creation and viewing interface
-- [x] API integration between frontend and backend
+- [x] Express backend server with MVC architecture (Marcel Borkowski)
+- [x] MongoDB database connection and models (Marcel Borkowski)
+- [x] User authentication system (register/login) (Marcel Borkowski)
+- [x] JWT token-based authorization (Marcel Borkowski)
+- [x] Password hashing and security (Marcel Borkowski)
+- [x] Complete CRUD API endpoints for tasks (Marcel Borkowski)
+- [x] React frontend application (Yiwei Li - structure, Marcel Borkowski - integration)
+- [x] User registration and login UI (Yiwei Li - components, Marcel Borkowski - functionality)
+- [x] Task creation and viewing interface (Yiwei Li - UI, Marcel Borkowski - backend)
+- [x] API integration between frontend and backend (Marcel Borkowski)
+- [x] Home page with team logo (Yiwei Li)
+- [x] Profile management page (Yiwei Li)
+- [x] Navigation bar with branding (Yiwei Li)
 
 ### Current Functionality
-1. **User Management**
+1. **User Management** (Marcel Borkowski)
    - User registration with validation
    - Secure login with JWT tokens
    - Password hashing with bcrypt
+   - Profile viewing (Yiwei Li - UI component)
 
-2. **Task Management**
+2. **Task Management** (Marcel Borkowski - backend, Yiwei Li - frontend components)
    - Create new tasks
    - View all user tasks
    - Task status tracking
    - Due date management
 
-3. **API Testing**
+3. **User Interface** (Yiwei Li)
+   - Home page with team branding
+   - Navigation bar with logo
+   - Profile management interface
+   - Responsive layout design
+
+4. **API Testing** (Marcel Borkowski)
    - All endpoints tested and functional
    - Proper error handling
    - Input validation
@@ -808,6 +845,6 @@ COMP229-Project/
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** July 27, 2025  
-**Prepared by:** COMP229 Group 3
+**Document Version:** 1.1  
+**Last Updated:** August 6, 2025  
+**Prepared by:** COMP229 Group 3 (Marcel Borkowski & Yiwei Li)
