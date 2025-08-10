@@ -1,3 +1,4 @@
+// client/src/App.jsx
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -56,41 +57,26 @@ const App = () => {
         <Navbar user={user} logout={logout} />
         <main className="main-content">
           <Routes>
-            <Route 
-              path="/" 
-              element={
-                user ? <Navigate to="/tasks" replace /> : <Home />
-              } 
+            <Route path="/" element={<Home user={user} />} />
+            <Route
+              path="/login"
+              element={user ? <Navigate to="/tasks" replace /> : <Login onLogin={login} />}
             />
-            <Route 
-              path="/login" 
-              element={
-                user ? <Navigate to="/tasks" replace /> : <Login onLogin={login} />
-              } 
+            <Route
+              path="/register"
+              element={user ? <Navigate to="/tasks" replace /> : <Register />}
             />
-            <Route 
-              path="/register" 
-              element={
-                user ? <Navigate to="/tasks" replace /> : <Register />
-              } 
+            <Route
+              path="/tasks"
+              element={user ? <Tasks user={user} /> : <Navigate to="/login" replace />}
             />
-            <Route 
-              path="/tasks" 
-              element={
-                user ? <Tasks user={user} /> : <Navigate to="/login" replace />
-              } 
+            <Route
+              path="/add-task"
+              element={user ? <AddTask user={user} /> : <Navigate to="/login" replace />}
             />
-            <Route 
-              path="/add-task" 
-              element={
-                user ? <AddTask user={user} /> : <Navigate to="/login" replace />
-              } 
-            />
-            <Route 
-              path="/profile" 
-              element={
-                user ? <Profile /> : <Navigate to="/login" replace />
-              } 
+            <Route
+              path="/profile"
+              element={user ? <Profile /> : <Navigate to="/login" replace />}
             />
           </Routes>
         </main>

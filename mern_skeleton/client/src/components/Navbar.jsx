@@ -1,5 +1,6 @@
+// client/src/components/Navbar.jsx
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Navbar = ({ user, logout }) => {
@@ -9,6 +10,8 @@ const Navbar = ({ user, logout }) => {
     logout();
     navigate('/login');
   };
+
+  const navClass = ({ isActive }) => `nav-link ${isActive ? 'active' : ''}`;
 
   return (
     <nav className="navbar">
@@ -21,34 +24,22 @@ const Navbar = ({ user, logout }) => {
         <div className="navbar-nav">
           {user ? (
             <>
-              <span className="user-info">
-                Welcome, {user.firstName} {user.lastName}
-              </span>
-              <Link to="/tasks" className="nav-link">
-                Tasks
-              </Link>
-              <Link to="/add-task" className="nav-link">
-                Add Task
-              </Link>
-              <Link to="/profile" className="nav-link">
-                Profile
-              </Link>
-              <button 
-                onClick={handleLogout} 
+              <span className="user-info">Welcome, {user.firstName} {user.lastName}</span>
+              <NavLink to="/tasks" className={navClass}>Tasks</NavLink>
+              <NavLink to="/add-task" className={navClass}>Add Task</NavLink>
+              <NavLink to="/profile" className={navClass}>MyProfile</NavLink>
+              <button
+                onClick={handleLogout}
                 className="btn btn-secondary"
                 style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
               >
-                Logout
+                SignOut
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="nav-link">
-                Login
-              </Link>
-              <Link to="/register" className="nav-link">
-                Register
-              </Link>
+              <NavLink to="/login" className={navClass}>Login</NavLink>
+              <NavLink to="/register" className={navClass}>Register</NavLink>
             </>
           )}
         </div>
