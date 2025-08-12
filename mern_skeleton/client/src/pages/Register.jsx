@@ -39,10 +39,23 @@ const Register = ({ onLogin }) => {
         email: formData.email,
         password: formData.password
       });
-      onLogin(response.user);
-      navigate('/tasks');
+      // Ensure we have token and user like login flow
+      if (response?.token && response?.user && onLogin) {
+        onLogin(response.user, response.token);
+        navigate('/tasks');
+      } else {
+        setError('Registration succeeded but response was incomplete');
+      }
     } catch (error) {
-      setError(error.response?.data?.error || 'Registration failed');
+      if (error?.message) {
+        setError(error.message);
+      } else if (error?.code === 'EMAIL_EXISTS') {
+        setError('Email already in use');
+      } else if (error?.code === 'INVALID_PASSWORD') {
+        setError('Invalid password');
+      } else {
+        setError('Registration failed');
+      }
     } finally {
       setLoading(false);
     }

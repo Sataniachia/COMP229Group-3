@@ -36,8 +36,8 @@ const register = async (req, res) => {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       console.log("❌ User already exists:", email);
-      return res.status(400).json({
-        message: 'User already exists with this email',
+      return res.status(409).json({
+        message: 'Email already in use',
         error: 'EMAIL_EXISTS'
       });
     }
@@ -111,9 +111,9 @@ const login = async (req, res) => {
     const user = await User.findOne({ email });
     if (!user) {
       console.log("❌ User not found:", email);
-      return res.status(401).json({
-        message: 'Invalid email or password',
-        error: 'INVALID_CREDENTIALS'
+      return res.status(404).json({
+        message: 'Account does not exist',
+        error: 'USER_NOT_FOUND'
       });
     }
 
@@ -132,14 +132,9 @@ const login = async (req, res) => {
     
     if (!isPasswordValid) {
       console.log("❌ Invalid password for user:", email);
-      // Debug encryption
-      console.log("Debug - Salt:", user.salt);
-      console.log("Debug - Stored hash:", user.hashed_password);
-      console.log("Debug - Test hash:", user.encryptPassword(password));
-      
       return res.status(401).json({
-        message: 'Invalid email or password',
-        error: 'INVALID_CREDENTIALS'
+        message: 'Incorrect password',
+        error: 'INVALID_PASSWORD'
       });
     }
 

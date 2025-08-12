@@ -64,7 +64,7 @@ const App = () => {
             />
             <Route
               path="/register"
-              element={user ? <Navigate to="/tasks" replace /> : <Register />}
+              element={user ? <Navigate to="/tasks" replace /> : <Register onLogin={login} />}
             />
             <Route
               path="/tasks"

@@ -29,10 +29,9 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      window.location.href = '/login';
+      // Removed redirect to avoid forced logout loop
     }
     return Promise.reject(error);
   }
@@ -45,11 +44,13 @@ const authService = {
       const response = await api.post('/register', userData);
       return response.data;
     } catch (error) {
-      throw new Error(
-        error.response?.data?.message || 
-        error.response?.data?.errors?.[0]?.msg ||
-        'Registration failed'
-      );
+      const status = error.response?.status;
+      const data = error.response?.data;
+      return Promise.reject({
+        status,
+        code: data?.error,
+        message: data?.message || data?.errors?.[0]?.msg || 'Registration failed'
+      });
     }
   },
 
@@ -59,11 +60,13 @@ const authService = {
       const response = await api.post('/login', credentials);
       return response.data;
     } catch (error) {
-      throw new Error(
-        error.response?.data?.message || 
-        error.response?.data?.errors?.[0]?.msg ||
-        'Login failed'
-      );
+      const status = error.response?.status;
+      const data = error.response?.data;
+      return Promise.reject({
+        status,
+        code: data?.error,
+        message: data?.message || data?.errors?.[0]?.msg || 'Login failed'
+      });
     }
   },
 

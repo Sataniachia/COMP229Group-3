@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import crypto from "crypto";
+import bcrypt from "bcryptjs";
 
 const UserSchema = new mongoose.Schema({
   firstName: {
@@ -83,7 +84,17 @@ UserSchema.set('toJSON', {
 // Methods
 UserSchema.methods = {
   authenticate: function(plainText) {
-    return this.encryptPassword(plainText) === this.hashed_password;
+    // Try legacy sha1 first
+    if (this.encryptPassword(plainText) === this.hashed_password) return true;
+    // If stored hash looks like bcrypt (starts with $2a/$2b) attempt bcrypt compare
+    if (this.hashed_password && this.hashed_password.startsWith('$2')) {
+      try {
+        return bcrypt.compareSync(plainText, this.hashed_password);
+      } catch (e) {
+        return false;
+      }
+    }
+    return false;
   },
   
   encryptPassword: function(password) {

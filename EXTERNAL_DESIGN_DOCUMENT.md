@@ -67,6 +67,12 @@ Our application's main data object is the **Task**, which includes:
 
 **Development Note:** We initially built the application using separate rapid-tasks-client and rapid-tasks-server directories. During development, we migrated all code to the mern_skeleton structure to comply with COMP229 assignment requirements and improve project organization.
 
+### Recent Update (Aug 12, 2025)
+- Fixed login persistence issue (token now stored consistently on both login and registration).
+- Added granular authentication error responses (user not found vs. incorrect password vs. email in use).
+- Added lightweight `/api/ping` endpoint and frontend API status badge.
+- Registration now auto-authenticates with returned token.
+
 ### Development Team Contributions
 
 **Marcel Borkowski:**

@@ -25,10 +25,18 @@ const Login = ({ onLogin }) => {
 
     try {
       const response = await authService.login(formData);
-      onLogin(response.user);
+      onLogin(response.user, response.token);
       navigate('/tasks');
     } catch (error) {
-      setError(error.response?.data?.error || 'Login failed');
+      if (error?.message) {
+        setError(error.message);
+      } else if (error?.code === 'USER_NOT_FOUND') {
+        setError('Account does not exist');
+      } else if (error?.code === 'INVALID_PASSWORD') {
+        setError('Incorrect password');
+      } else {
+        setError('Login failed');
+      }
     } finally {
       setLoading(false);
     }

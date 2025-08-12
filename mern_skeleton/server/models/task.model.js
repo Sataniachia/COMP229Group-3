@@ -1,61 +1,72 @@
-// server/routes/task.routes.js
-import express from 'express';
-import { body } from 'express-validator';
-import { protect } from '../middleware/auth.js';
-import {
-  getTasks,
-  getTaskById,
-  createTask,
-  updateTask,
-  deleteTask,
-  getTaskStats
-} from '../controllers/task.controller.js';
+import mongoose from 'mongoose';
 
-const router = express.Router();
+const TaskSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: [true, 'Task title is required'],
+    trim: true,
+    maxlength: [100, 'Title cannot be more than 100 characters']
+  },
+  description: {
+    type: String,
+    trim: true,
+    maxlength: [500, 'Description cannot be more than 500 characters']
+  },
+  status: {
+    type: String,
+    enum: ['Pending', 'In Progress', 'Completed'],
+    default: 'Pending'
+  },
+  priority: {
+    type: String,
+    enum: ['Low', 'Medium', 'High'],
+    default: 'Medium'
+  },
+  dueDate: {
+    type: Date,
+    validate: {
+      validator: function(value) {
+        if (!value) return true; // optional
+        return value >= new Date().setHours(0,0,0,0);
+      },
+      message: 'Due date cannot be in the past'
+    }
+  },
+  completedDate: { type: Date },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: [true, 'User ID is required']
+  },
+  tags: [{ type: String, trim: true }],
+  isArchived: { type: Boolean, default: false }
+}, { timestamps: true });
 
-// Task validation rules
-const taskValidation = [
-  body('title')
-    .notEmpty().withMessage('Title is required')
-    .isLength({ max: 255 }).withMessage('Title must be less than 255 characters'),
+TaskSchema.index({ user: 1, status: 1 });
+TaskSchema.index({ dueDate: 1 });
 
-  body('description')
-    .optional()
-    .isLength({ max: 2000 }).withMessage('Description must be less than 2000 characters'),
+TaskSchema.virtual('isOverdue').get(function() {
+  if (!this.dueDate || this.status === 'Completed') return false;
+  return this.dueDate < new Date();
+});
 
-  body('status')
-    .optional()
-    .isIn(['Pending', 'In Progress', 'Completed'])
-    .withMessage('Status must be one of: Pending, In Progress, Completed'),
+TaskSchema.virtual('daysUntilDue').get(function() {
+  if (!this.dueDate) return null;
+  const diffTime = this.dueDate - new Date();
+  return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+});
 
-  body('priority')
-    .optional()
-    .isIn(['Low', 'Medium', 'High', 'Urgent'])
-    .withMessage('Priority must be one of: Low, Medium, High, Urgent'),
+TaskSchema.pre('save', function(next) {
+  if (this.isModified('status')) {
+    if (this.status === 'Completed' && !this.completedDate) {
+      this.completedDate = new Date();
+    } else if (this.status !== 'Completed') {
+      this.completedDate = undefined;
+    }
+  }
+  next();
+});
 
-  body('dueDate')
-    .optional()
-    .isISO8601().withMessage('Due date must be a valid date'),
+TaskSchema.set('toJSON', { virtuals: true });
 
-  body('tags')
-    .optional()
-    .isArray().withMessage('Tags must be an array')
-    .customSanitizer((value) => {
-      if (Array.isArray(value)) {
-        return value.map(tag => tag.toString().trim()).filter(tag => tag.length > 0);
-      }
-      return [];
-    })
-];
-
-// Protected routes (all task routes require authentication)
-router.use(protect);
-
-router.get('/stats', getTaskStats);
-router.get('/', getTasks);
-router.get('/:id', getTaskById);
-router.post('/', taskValidation, createTask);
-router.put('/:id', taskValidation, updateTask);
-router.delete('/:id', deleteTask);
-
-export default router;
+export default mongoose.model('Task', TaskSchema);

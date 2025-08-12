@@ -64,7 +64,7 @@
 | PB-020 | Integration | Frontend-Backend API Integration | High | 13 | 2 | ✅ Done | Marcel B |
 | PB-021 | Integration | Authentication Flow | High | 8 | 2 | ✅ Done | Marcel B |
 | PB-022 | Integration | Task CRUD Frontend | High | 13 | 2 | 🚧 In Progress | Marcel B |
-| PB-023 | Integration | Error Handling & Validation | Medium | 8 | 2 | ✅ Done | Marcel B |
+| PB-023 | Integration | Error Handling & Validation (Granular auth errors, API status badge) | Medium | 8 | 2 | ✅ Done | Marcel B |
 | **DATABASE & BACKEND** |
 | PB-024 | Backend | MongoDB Atlas Setup | High | 8 | 1 | ✅ Done | Marcel B |
 | PB-025 | Backend | User Model & Schema | High | 5 | 1 | ✅ Done | Marcel B |
@@ -177,6 +177,6 @@
 
 ---
 
-**Last Updated:** August 5, 2025  
+**Last Updated:** August 12, 2025  
 **Product Owner:** COMP229 Group 3  
 **Scrum Master:** [To be assigned]

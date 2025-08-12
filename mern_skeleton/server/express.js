@@ -82,6 +82,11 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+// Lightweight ping (used by frontend status badge)
+app.get('/api/ping', (req, res) => {
+  res.json({ ok: true, time: Date.now() });
+});
+
 // Mount routes
 app.use("/api", authRoutes);
 app.use("/api/users", userRoutes);
