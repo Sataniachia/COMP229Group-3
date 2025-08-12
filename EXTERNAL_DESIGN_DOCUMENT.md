@@ -320,26 +320,26 @@ Remaining for video (not blocking code completion): demo recording & slide deck.
 **Prepared by:** COMP229 Group 3
 
 ### Gap & Action Summary (Aug 12, 2025)
-Part 2 Outstanding Evidence To Add:
-- Postman API test screenshots (to capture CRUD + auth) – Assigned: Marcel (capture) / Yuchen (embed)
-- Demo video (5–10 min) – Assigned: Rohit & Yuchen (record, voiceover)
+Part 2 Outstanding Evidence:
+- Postman API test screenshots
+- Demo video (5–10 min)
 
 Part 3 Remaining Functional Items:
-- Edit Task UI finalization (PB-017) – In progress
-- Task statistics endpoint + UI (PB-011) – Planned (Rohit)
-- Task filtering/search (PB-010) – In progress
+- Edit Task UI finalization (PB-017)
+- Task statistics endpoint + UI (PB-011) 
+- Task filtering/search (PB-010)
 
-Part 4 Preparation Tasks (Early Planning):
-- Unit test harness (Jest for backend, React Testing Library for frontend) – Rohit
-- Cypress E2E baseline scripts – Rohit
-- Deployment target decision (Render / Railway / Vercel backend + Mongo Atlas) – Rohit
-- CI/CD (GitHub Actions basic pipeline) – Yuchen
-- Visual design pass & responsive polish – Yuchen
-- Accessibility checklist (WCAG quick audit) – Yuchen
+Part 4 Preparation Tasks:
+- Unit test harness (Jest for backend, React Testing Library for frontend)
+- Cypress E2E baseline scripts
+- Deployment target decision (Render / Railway / Vercel backend + Mongo Atlas)
+- CI/CD (GitHub Actions basic pipeline)
+- Visual design pass & responsive polish
+- Accessibility checklist (WCAG quick audit)
 
 Risks:
-- Low contribution from two members historically – mitigation: clearly assigned deliverables above.
-- Testing & deployment time crunch – mitigation: start scaffolding tests before feature freeze.
+- Low contribution from two members historically with clearly assigned deliverables.
+- Testing & deployment time crunch with test scaffolding before feature freeze.
 
 ---
 
@@ -357,8 +357,6 @@ Screenshot Order:
 10. Complete Task (status → Completed)
 11. Delete Task (200)
 12. Ping Endpoint (200 ok: true)
-
-Embed Screenshots (replace filename stubs once captured):
 
 ![API 01 - Register Success](screenshots/api_01_register_success.png)
 *Figure 1: Successful user registration (201 Created)*
@@ -396,11 +394,6 @@ Embed Screenshots (replace filename stubs once captured):
 ![API 12 - Ping](screenshots/api_12_ping.png)
 *Figure 12: Ping endpoint health check (200 OK)*
 
-Notes:
-- Create a local folder `screenshots/` at repo root for the images (can omit from commit if desired by adding to `.gitignore`).
-- Capture both request and response panes for at least first, create, update, delete.
-- Ensure status code is visible in each capture.
-
 ### Export to PDF & PNG
 1. Open this markdown in VS Code preview (Ctrl+Shift+V) or on GitHub.
 2. Print to PDF (browser: Ctrl+P → Save as PDF). Name: `EDD_v1.pdf`.
@@ -408,7 +401,6 @@ Notes:
   - Option A: Use an online PDF-to-PNG converter (export each page).
   - Option B: Open PDF full screen and use Windows Snipping Tool / Snip & Sketch for each page.
   - Option C (advanced): Use ImageMagick if installed: `magick convert -density 180 EDD_v1.pdf EDD_v1_page.png`.
-4. Verify each embedded screenshot renders before exporting (no broken links).
 
 ---
 

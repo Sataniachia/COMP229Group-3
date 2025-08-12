@@ -34,7 +34,7 @@
    ```
 
 4. **Database Setup**
-   - Ensure MongoDB is running locally on port 27017
+   - MongoDB should be running locally on port 27017
    - Or update `config/config.js` with your MongoDB Atlas connection string
 
 5. **Create Admin User**
@@ -207,7 +207,7 @@ COMP229-Project/
 
 ### Common Issues
 1. **MongoDB Connection Error**
-   - Ensure MongoDB is running locally
+   - MongoDB should be running locally
    - Check connection string in `config/config.js`
 
 2. **Port Already in Use**
@@ -221,7 +221,7 @@ COMP229-Project/
 4. **API Not Responding**
    - Verify both servers are running
    - Check API status badge in navigation
-   - Ensure ports 3000 (backend) and 5173 (frontend) are free
+   - Ports 3000 (backend) and 5173 (frontend) should be free
 
 ---
 

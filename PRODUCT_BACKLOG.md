@@ -179,4 +179,4 @@
 
 **Last Updated:** August 12, 2025  
 **Product Owner:** COMP229 Group 3  
-**Scrum Master:** [To be assigned]
+**Scrum Master:** Marcel Borkowski
