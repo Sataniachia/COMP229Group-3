@@ -10,8 +10,11 @@ const Tasks = ({ user }) => {
   const [filter, setFilter] = useState('all');
   const [editingId, setEditingId] = useState(null);
   const [editData, setEditData] = useState({ title: '', description: '', status: 'Pending', priority: 'Medium', dueDate: '' });
+  const [search, setSearch] = useState('');
+  const [stats, setStats] = useState(null);
+  const [statsError, setStatsError] = useState('');
 
-  useEffect(() => { fetchTasks(); }, []);
+  useEffect(() => { fetchTasks(); fetchStats(); }, []);
 
   const fetchTasks = async () => {
     try {
@@ -23,6 +26,15 @@ const Tasks = ({ user }) => {
       console.error('Fetch tasks error:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchStats = async () => {
+    try {
+      const data = await taskService.getTaskStats();
+      setStats(data);
+    } catch (e) {
+      setStatsError('Could not load stats');
     }
   };
 
@@ -74,8 +86,15 @@ const Tasks = ({ user }) => {
   };
 
   const getFilteredTasks = () => {
-    if (filter === 'all') return tasks;
-    return tasks.filter(task => norm(task.status) === filter);
+    let list = tasks;
+    if (filter !== 'all') {
+      list = list.filter(task => norm(task.status) === filter);
+    }
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      list = list.filter(t => (t.title || '').toLowerCase().includes(q) || (t.description || '').toLowerCase().includes(q));
+    }
+    return list;
   };
 
   const countBy = (s) => tasks.filter(t => norm(t.status) === s).length;
@@ -103,15 +122,27 @@ const Tasks = ({ user }) => {
 
   return (
     <div>
-      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'2rem' }}>
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'1.25rem', flexWrap:'wrap', gap:'1rem' }}>
         <h1 style={{ color:'#333' }}>My Tasks</h1>
         <Link to="/add-task" className="btn btn-primary">Add New Task</Link>
       </div>
 
       {error && <div className="alert alert-danger">{error}</div>}
 
+      {/* Stats Panel */}
+      {stats && (
+        <div className="card" style={{ marginBottom:'1.25rem', padding:'1rem', display:'flex', flexWrap:'wrap', gap:'1.25rem' }}>
+          <div><strong>Total:</strong> {stats.totalTasks || 0}</div>
+          <div><strong>Pending:</strong> {stats.statusBreakdown?.Pending || 0}</div>
+            <div><strong>In Progress:</strong> {stats.statusBreakdown?.['In Progress'] || 0}</div>
+          <div><strong>Completed:</strong> {stats.statusBreakdown?.Completed || 0}</div>
+          <div><strong>Overdue:</strong> {stats.overdueTasks || 0}</div>
+        </div>
+      )}
+      {statsError && <div className="alert alert-warning" style={{ marginBottom:'1.25rem' }}>{statsError}</div>}
+
       {/* Filter buttons */}
-      <div style={{ marginBottom:'2rem' }}>
+      <div style={{ marginBottom:'1.25rem', display:'flex', flexWrap:'wrap', gap:'0.5rem', alignItems:'center' }}>
         <button className={filter==='all' ? 'btn btn-primary' : 'btn btn-secondary'} onClick={()=>setFilter('all')} style={{ marginRight:'0.5rem' }}>
           All ({tasks.length})
         </button>
@@ -124,6 +155,14 @@ const Tasks = ({ user }) => {
         <button className={filter==='completed' ? 'btn btn-primary' : 'btn btn-secondary'} onClick={()=>setFilter('completed')}>
           Completed ({countBy('completed')})
         </button>
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={search}
+          onChange={(e)=>setSearch(e.target.value)}
+          className="form-control"
+          style={{ maxWidth:'220px' }}
+        />
       </div>
 
       {filteredTasks.length === 0 ? (

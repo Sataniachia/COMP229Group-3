@@ -13,8 +13,8 @@
 |------|------|-------------------------|
 | Marcel Borkowski | Backend Lead / Full-Stack | API development, database design, authentication, server architecture |
 | Yiwei Li | Frontend Lead / UI/UX | React components, user interface design, navigation, styling |
-| [Team Member 3] | [Role] | [Responsibilities] |
-| [Team Member 4] | [Role] | [Responsibilities] |
+| Rohit Luitel | Testing & Deployment | Stats, tests, deployment |
+| Yuchen Jiang | Docs & CI/CD | Videos, CI, design/accessibility |
 
 ---
 
@@ -76,7 +76,7 @@
 | PB-030 | Testing | API Testing Documentation | High | 5 | 1 | ✅ Done | Marcel B |
 | PB-031 | Testing | Unit Testing Setup | Medium | 8 | 3 | 📅 Planned | Rohit L |
 | PB-032 | Testing | E2E Testing with Cypress | Medium | 13 | 3 | 📅 Planned | Rohit L |
-| PB-033 | Testing | Performance Testing | Low | 8 | 3 | 📅 Planned | |
+| PB-033 | Testing | Performance Testing | Low | 8 | 3 | 📅 Planned | Rohit L |
 | **DEPLOYMENT & DEVOPS** |
 | PB-034 | DevOps | Cloud Deployment Setup | High | 13 | 3 | 📅 Planned | Rohit L |
 | PB-035 | DevOps | CI/CD Pipeline | Medium | 13 | 3 | 📅 Planned | Yuchen J |

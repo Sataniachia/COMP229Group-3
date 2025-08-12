@@ -27,8 +27,8 @@ const taskValidation = [
   
   body('status')
     .optional()
-    .isIn(['To Do', 'In Progress', 'Completed'])
-    .withMessage('Status must be one of: To Do, In Progress, Completed'),
+  .isIn(['Pending', 'In Progress', 'Completed'])
+  .withMessage('Status must be one of: Pending, In Progress, Completed'),
   
   body('priority')
     .optional()

@@ -94,6 +94,22 @@ Our application's main data object is the **Task**, which includes:
 - Team logo creation and asset management
 - Early project structure and organization
 
+**Rohit Luitel:** Testing & deployment (stats, tests, cloud setup)
+**Yuchen Jiang:** Documentation & CI/CD (videos, pipeline, design/accessibility)
+
+---
+
+### Part 3 Additions (Release 2 Progress)
+- Home/Landing page implemented with recent tasks
+- Authenticated navigation and protected routes
+- Inline task editing and status change controls
+- Task filtering by status (All, Pending, In Progress, Completed)
+- Keyword search across title & description (new)
+- Backend task statistics endpoint (`GET /api/tasks/stats`) + frontend stats panel (totals, status counts, overdue)
+- API health badge (/api/ping)
+
+Remaining for video (not blocking code completion): demo recording & slide deck.
+
 ---
 
 ## 4. Wireframes
@@ -324,6 +340,77 @@ Part 4 Preparation Tasks (Early Planning):
 Risks:
 - Low contribution from two members historically – mitigation: clearly assigned deliverables above.
 - Testing & deployment time crunch – mitigation: start scaffolding tests before feature freeze.
+
+---
+
+## 8. API Testing Evidence (Part 2 Submission)
+Screenshot Order:
+1. Registration Success (201) – new user
+2. Duplicate Registration (409 EMAIL_EXISTS)
+3. Login Success (200)
+4. Login Invalid Password (401 INVALID_PASSWORD)
+5. Login Nonexistent User (404 USER_NOT_FOUND)
+6. Unauthorized Tasks Access (401 no token)
+7. Create Task (201)
+8. List Tasks (200)
+9. Update Task (200)
+10. Complete Task (status → Completed)
+11. Delete Task (200)
+12. Ping Endpoint (200 ok: true)
+
+Embed Screenshots (replace filename stubs once captured):
+
+![API 01 - Register Success](screenshots/api_01_register_success.png)
+*Figure 1: Successful user registration (201 Created)*
+
+![API 02 - Duplicate Email](screenshots/api_02_register_duplicate.png)
+*Figure 2: Duplicate registration attempt (409 EMAIL_EXISTS)*
+
+![API 03 - Login Success](screenshots/api_03_login_success.png)
+*Figure 3: Successful login (200 OK)*
+
+![API 04 - Login Wrong Password](screenshots/api_04_login_wrong_password.png)
+*Figure 4: Invalid password (401 INVALID_PASSWORD)*
+
+![API 05 - Login User Not Found](screenshots/api_05_login_user_not_found.png)
+*Figure 5: Nonexistent account (404 USER_NOT_FOUND)*
+
+![API 06 - Tasks Unauthorized](screenshots/api_06_tasks_unauthorized.png)
+*Figure 6: Unauthorized tasks request without token (401)*
+
+![API 07 - Create Task](screenshots/api_07_create_task.png)
+*Figure 7: Task creation (201 Created)*
+
+![API 08 - List Tasks](screenshots/api_08_list_tasks.png)
+*Figure 8: Task list retrieval (200 OK)*
+
+![API 09 - Update Task](screenshots/api_09_update_task.png)
+*Figure 9: Task update (200 OK)*
+
+![API 10 - Complete Task](screenshots/api_10_complete_task.png)
+*Figure 10: Task marked Completed (200 OK, completedDate set)*
+
+![API 11 - Delete Task](screenshots/api_11_delete_task.png)
+*Figure 11: Task deletion (200 OK)*
+
+![API 12 - Ping](screenshots/api_12_ping.png)
+*Figure 12: Ping endpoint health check (200 OK)*
+
+Notes:
+- Create a local folder `screenshots/` at repo root for the images (can omit from commit if desired by adding to `.gitignore`).
+- Capture both request and response panes for at least first, create, update, delete.
+- Ensure status code is visible in each capture.
+
+### Export to PDF & PNG
+1. Open this markdown in VS Code preview (Ctrl+Shift+V) or on GitHub.
+2. Print to PDF (browser: Ctrl+P → Save as PDF). Name: `EDD_v1.pdf`.
+3. For PNG:
+  - Option A: Use an online PDF-to-PNG converter (export each page).
+  - Option B: Open PDF full screen and use Windows Snipping Tool / Snip & Sketch for each page.
+  - Option C (advanced): Use ImageMagick if installed: `magick convert -density 180 EDD_v1.pdf EDD_v1_page.png`.
+4. Verify each embedded screenshot renders before exporting (no broken links).
+
+---
 
 **Team Name:** COMP229 Group 3
 
