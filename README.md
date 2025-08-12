@@ -50,7 +50,7 @@
    cd mern_skeleton
    npm run dev
    ```
-   Server runs on: http://localhost:4000
+   Server runs on: http://localhost:3000
 
 2. **Start Frontend (in new terminal)**
    ```bash
@@ -63,9 +63,8 @@
 - **Email:** admin@rapidtasks.com
 - **Password:** admin123
 
-### Test User Credentials
-- **Email:** test@rapidtasks.com
-- **Password:** test123
+### Test User (create via registration form if missing)
+- **Suggested:** test@rapidtasks.com / test123
 
 ---
 
@@ -154,12 +153,12 @@ COMP229-Project/
 
 ## 👥 Team Members
 
-This project is designed for a 4-member team with the following roles:
-
-- **Team Member 1:** Backend Architecture & Database
-- **Team Member 2:** Task Management & API Development  
-- **Team Member 3:** Authentication & Security
-- **Team Member 4:** Frontend Development & UI/UX
+| Name | Role | Focus |
+|------|------|-------|
+| Marcel Borkowski | Backend Lead / Full-Stack | API design, auth, models, integration |
+| Yiwei Li | Frontend Lead / UI | Core React pages, layout, logo |
+| Rohit Luitel | Testing & Deployment (Part 4) | Upcoming: unit/E2E tests, deployment, performance |
+| Yuchen Jiang | Documentation & CI/CD (Part 4) | Upcoming: videos, backlog hygiene, CI pipeline, accessibility |
 
 ---
 
@@ -174,11 +173,12 @@ This project is designed for a 4-member team with the following roles:
 - [x] Full CRUD operations functional
 - [x] Basic functional frontend (not focused on design)
 
-### Project Part 3 - Frontend Integration (Next)
-- [ ] Home/Landing page with team logo
-- [ ] Navigation bar with user authentication status
-- [ ] SignUp/SignIn integration
-- [ ] Enhanced task management interface
+### Project Part 3 - Frontend Integration (In Progress)
+- [x] Home/Landing page with team logo
+- [x] Navigation bar with user authentication status
+- [x] SignUp/SignIn integration (login persistence fixed)
+- [x] Basic task management interface
+- [ ] Edit form polish & task filtering (remaining)
 
 ### Project Part 4 - Final Release (Future)
 - [ ] Visual design improvements
@@ -211,5 +211,5 @@ This project is for educational purposes as part of COMP229 coursework.
 
 ---
 
-**Last Updated:** August 2025  
+**Last Updated:** August 12, 2025  
 **Project Status:** Release 1 Complete ✅

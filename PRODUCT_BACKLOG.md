@@ -50,7 +50,7 @@
 | PB-008 | Tasks | Update Task API | High | 8 | 1 | ✅ Done | Marcel B |
 | PB-009 | Tasks | Delete Task API | High | 5 | 1 | ✅ Done | Marcel B |
 | PB-010 | Tasks | Task Filtering & Search | Medium | 8 | 2 | 🚧 In Progress | Marcel B |
-| PB-011 | Tasks | Task Statistics API | Low | 5 | 2 | 📅 Planned | |
+| PB-011 | Tasks | Task Statistics API | Low | 5 | 2 | 📅 Planned | Rohit L |
 | **FRONTEND DEVELOPMENT** |
 | PB-012 | UI | Home/Landing Page | High | 13 | 2 | ✅ Done | Yiwei L |
 | PB-013 | UI | User Registration Form | High | 8 | 2 | ✅ Done | Yiwei L |
@@ -74,18 +74,18 @@
 | PB-029 | Backend | API Route Configuration | High | 5 | 1 | ✅ Done | Marcel B |
 | **TESTING & QUALITY** |
 | PB-030 | Testing | API Testing Documentation | High | 5 | 1 | ✅ Done | Marcel B |
-| PB-031 | Testing | Unit Testing Setup | Medium | 8 | 3 | 📅 Planned | |
-| PB-032 | Testing | E2E Testing with Cypress | Medium | 13 | 3 | 📅 Planned | |
+| PB-031 | Testing | Unit Testing Setup | Medium | 8 | 3 | 📅 Planned | Rohit L |
+| PB-032 | Testing | E2E Testing with Cypress | Medium | 13 | 3 | 📅 Planned | Rohit L |
 | PB-033 | Testing | Performance Testing | Low | 8 | 3 | 📅 Planned | |
 | **DEPLOYMENT & DEVOPS** |
-| PB-034 | DevOps | Cloud Deployment Setup | High | 13 | 3 | | |
-| PB-035 | DevOps | CI/CD Pipeline | Medium | 13 | 3 | | |
-| PB-036 | DevOps | Environment Configuration | Medium | 5 | 3 | | |
+| PB-034 | DevOps | Cloud Deployment Setup | High | 13 | 3 | 📅 Planned | Rohit L |
+| PB-035 | DevOps | CI/CD Pipeline | Medium | 13 | 3 | 📅 Planned | Yuchen J |
+| PB-036 | DevOps | Environment Configuration | Medium | 5 | 3 | 📅 Planned | Yuchen J |
 | **DESIGN & UX** |
-| PB-037 | Design | Team Logo Design | Medium | 3 | 2 | | |
-| PB-038 | Design | Visual Design System | Medium | 8 | 3 | | |
-| PB-039 | Design | Responsive Design | Medium | 8 | 3 | | |
-| PB-040 | Design | Accessibility Features | Low | 5 | 3 | | |
+| PB-037 | Design | Team Logo Design | Medium | 3 | 2 | ✅ Done | Yiwei L |
+| PB-038 | Design | Visual Design System | Medium | 8 | 3 | 📅 Planned | Yuchen J |
+| PB-039 | Design | Responsive Design | Medium | 8 | 3 | 📅 Planned | Yuchen J |
+| PB-040 | Design | Accessibility Features | Low | 5 | 3 | 📅 Planned | Yuchen J |
 
 ---
 

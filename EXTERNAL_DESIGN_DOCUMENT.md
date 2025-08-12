@@ -303,6 +303,28 @@ Our application's main data object is the **Task**, which includes:
 **Last Updated:** August 2025  
 **Prepared by:** COMP229 Group 3
 
+### Gap & Action Summary (Aug 12, 2025)
+Part 2 Outstanding Evidence To Add:
+- Postman API test screenshots (to capture CRUD + auth) – Assigned: Marcel (capture) / Yuchen (embed)
+- Demo video (5–10 min) – Assigned: Rohit & Yuchen (record, voiceover)
+
+Part 3 Remaining Functional Items:
+- Edit Task UI finalization (PB-017) – In progress
+- Task statistics endpoint + UI (PB-011) – Planned (Rohit)
+- Task filtering/search (PB-010) – In progress
+
+Part 4 Preparation Tasks (Early Planning):
+- Unit test harness (Jest for backend, React Testing Library for frontend) – Rohit
+- Cypress E2E baseline scripts – Rohit
+- Deployment target decision (Render / Railway / Vercel backend + Mongo Atlas) – Rohit
+- CI/CD (GitHub Actions basic pipeline) – Yuchen
+- Visual design pass & responsive polish – Yuchen
+- Accessibility checklist (WCAG quick audit) – Yuchen
+
+Risks:
+- Low contribution from two members historically – mitigation: clearly assigned deliverables above.
+- Testing & deployment time crunch – mitigation: start scaffolding tests before feature freeze.
+
 **Team Name:** COMP229 Group 3
 
 ### Team Members & Contributions
@@ -310,8 +332,8 @@ Our application's main data object is the **Task**, which includes:
 |------|------------|------|-----------------|----------------------|
 | Marcel Borkowski | 301488651 | Full-Stack Developer | Sataniachia | Backend architecture, MongoDB integration, authentication system, API development, task CRUD operations, debugging, project migration to MERN structure |
 | Yiwei Li | [ID] | Frontend Developer | [Username] | Initial React components, Home page, Profile page, Navbar component, team logo integration, frontend styling, early project structure |
-| [Team Member 3] | [ID] | [Role] | [Username] | [Contributions] |
-| [Team Member 4] | [ID] | [Role] | [Username] | [Contributions] |
+| Rohit Luitel | [ID] | Testing & Deployment Lead (Assigned Part 4 tasks) | [Username] | To produce Part 2 & 3 demo videos, upcoming unit/E2E test implementation, deployment & performance tasks |
+| Yuchen Jiang | [ID] | Documentation & QA (Assigned Part 4 tasks) | [Username] | To produce Part 2 & 3 demo videos, backlog maintenance, final EDD polish, accessibility & CI/CD documentation |
 
 **Team Logo:** [Insert Team Logo Here]
 
