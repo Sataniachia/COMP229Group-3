@@ -412,7 +412,7 @@ Screenshot Order:
 | Marcel Borkowski | 301488651 | Full-Stack Developer | Sataniachia | Backend architecture, MongoDB integration, authentication system, API development, task CRUD operations, debugging, project migration to MERN structure |
 | Yiwei Li | [ID] | Frontend Developer | [Username] | Initial React components, Home page, Profile page, Navbar component, team logo integration, frontend styling, early project structure |
 | Rohit Luitel | [ID] | Testing & Deployment Lead (Assigned Part 4 tasks) | [Username] | To produce Part 2 & 3 demo videos, upcoming unit/E2E test implementation, deployment & performance tasks |
-| Yuchen Jiang | [ID] | Documentation & QA (Assigned Part 4 tasks) | [Username] | To produce Part 2 & 3 demo videos, backlog maintenance, final EDD polish, accessibility & CI/CD documentation |
+| Yuchen Jiang | 301440590 | Documentation & QA (Assigned Part 4 tasks) | [Username] | To produce Part 2 & 3 demo videos, backlog maintenance, final EDD polish, accessibility & CI/CD documentation |
 
 **Team Logo:** [Insert Team Logo Here]
 
