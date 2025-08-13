@@ -7,9 +7,11 @@ import bodyParser from "body-parser";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import taskRoutes from "./routes/task.routes.js";
+import path from "path";
 
 const app = express();
-
+const CURRENT_WORKING_DIR = process.cwd();
+app.use(express.static(path.join(CURRENT_WORKING_DIR, "dist/app")));
 // CORS configuration
 const corsOptions = {
   origin: ["http://localhost:5173", "http://localhost:3000"],
