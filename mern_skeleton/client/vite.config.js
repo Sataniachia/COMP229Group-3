@@ -9,27 +9,27 @@ export default defineConfig({
     host: '0.0.0.0',
     proxy:{
       '/api/auth/register':{
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true
       },
       '/api/auth/login':{
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true
       },
       '/api/tasks':{
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true
       },
       ' /api/tasks/:id':{
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true
       },
       '/api/tasks/stats':{
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true
       },
       '/api/ping':{
-        target: 'http://localhost:3000',
+        target: 'http://localhost:10000',
         changeOrigin: true
       }
     }
