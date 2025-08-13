@@ -18,7 +18,7 @@
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Sataniachia/COMP229Group-3.git
-   cd COMP229-Project
+   cd COMP229Group-3
    ```
 
 2. **Backend Setup**
